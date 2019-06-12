@@ -315,7 +315,7 @@ class APP{
         this._camera = new THREE.PerspectiveCamera(75, $mainFrame.width() / $mainFrame.height(), 0.1, 1000);
         this.renderer = new THREE.WebGLRenderer();
         this.renderer.setSize($mainFrame.width(), $mainFrame.height());
-        this._camera.position.z = 5;
+        this._camera.position.z = 8;
         this._camera.position.y = 1;
     
         // 自動生成されたcanvas要素をdivへ追加する。
