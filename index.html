@@ -1,43 +1,14 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
-        <script src="dist/assets/bundle.js"></script>
-        <script>
-            $(function(){
-            //トグルボタン定義
-            $("#chk1").button();
-            $("#chk2").button();
-            });
-        </script>
-        <style>
-            body {
-                overflow:hidden;
-                margin: 0;
-            }
-            .text-label {
-                color: #fff;
-                font-family: "Fira Mono", Monaco, "Andale Mono", "Lucida Console", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
-                margin: -10px 0 0 -4px;
-                font-size: 20px;
-                pointer-events:none;
-            }
-            .checka{
-                position: absolute;
-                left: 0;
-                top:0;
-            }
-            .checkb{
-                position: absolute;
-                left: 50;
-                top:0;
-            }
-        </style>
-    </head>
-
     <body>
-        <input type="checkbox" id="chk1" class="checka"/><label class="checka" for="chk1">C</label>
-        <input type="checkbox" id="chk2" class="checkb"/><label class="checkb" for="chk2">1</label>
+        <iframe src="application.html" id="frame" width="400px" height="300px"></iframe>
+        <textarea id="txt"></textarea>
+        <script>
+            var  click_b = function(){
+                var text = 'application.html?mol='+encodeURIComponent(document.getElementById('txt').value);
+                document.getElementById('frame').contentWindow.location.replace(text);
+                console.log(text);
+            }
+        </script>
+        <button onclick="click_b()">change</button>
     </body>
 </html>
